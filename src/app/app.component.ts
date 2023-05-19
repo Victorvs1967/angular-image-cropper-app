@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'angular-image-cropper-app';
+
+  imgChangeEvt: any = '';
+  cropImgPreview: any = '';
+
+  onFileChange(event: any): void {
+    this.imgChangeEvt = event;
+  }
+
+  cropImg(e: ImageCroppedEvent) {
+    this.cropImgPreview = e.base64;
+  }
+
+  imgLoad() {
+
+  }
+
+  initCropper() {
+
+  }
+
+  imgFailed() {
+
+  }
 }
